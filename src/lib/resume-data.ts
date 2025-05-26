@@ -1,6 +1,6 @@
 
 import type { Icon } from 'lucide-react';
-import { CodeXmlIcon, PaletteIcon, BoxesIcon, FeatherIcon, OrbitIcon, NetworkIcon, ServerIcon, PyramidIcon, DatabaseIcon, FileCodeIcon, GitForkIcon, GithubIcon, ContainerIcon, CodeSquareIcon, FigmaIcon, LinkedinIcon, MailIcon, FileJsonIcon, BriefcaseIcon, AwardIcon, GraduationCapIcon, HomeIcon, LightbulbIcon, UsersIcon, FileTextIcon } from 'lucide-react';
+import { CodeXmlIcon, PaletteIcon, BoxesIcon, FeatherIcon, OrbitIcon, NetworkIcon, ServerIcon, PyramidIcon, DatabaseIcon, FileCodeIcon, GitForkIcon, GithubIcon, ContainerIcon, CodeSquareIcon, FigmaIcon, LinkedinIcon, MailIcon, FileJsonIcon, BriefcaseIcon, AwardIcon, GraduationCapIcon, HomeIcon, UsersIcon, StarIcon } from 'lucide-react';
 
 export interface Skill {
   name: string;
@@ -218,7 +218,7 @@ export const akuSarmaData = {
       description: "Secured third place by excelling in algorithm design and coding challenges, demonstrating advanced programming and critical thinking skills.",
     },
   ] as Award[],
-  testimonials: [ // Placeholder testimonials
+  testimonials: [ 
     {
       quote: "Aku is a highly skilled and dedicated developer. His ability to quickly grasp complex concepts and deliver high-quality work is truly impressive. He was a valuable asset to our team.",
       name: "Jane Doe",
@@ -245,8 +245,8 @@ export const akuSarmaData = {
     { href: '/', label: 'Home', icon: HomeIcon },
     { href: '/projects', label: 'Projects', icon: BriefcaseIcon },
     { href: '/about', label: 'About', icon: UsersIcon },
-    { href: '/resume-analyzer', label: 'Resume Analyzer', icon: LightbulbIcon },
-    { href: '/testimonials', label: 'Testimonials', icon: AwardIcon },
+    // { href: '/resume-analyzer', label: 'Resume Analyzer', icon: LightbulbIcon }, // Removed Resume Analyzer
+    { href: '/testimonials', label: 'Testimonials', icon: StarIcon }, // Changed icon to StarIcon as AwardIcon might be used elsewhere.
   ] as NavItem[],
   socialLinks: [
     { href: "https://www.github.com/AkuSarma", icon: GithubIcon, label: "GitHub" },

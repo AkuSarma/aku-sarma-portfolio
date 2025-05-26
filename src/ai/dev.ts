@@ -1,4 +1,4 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/resume-skills-analyzer.ts';
+// Removed resume-skills-analyzer.ts import as the feature is being removed.

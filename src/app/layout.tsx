@@ -6,6 +6,7 @@ import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geist = Geist({
   subsets: ['latin'],
@@ -24,15 +25,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.variable}>
+    <html lang="en" className={geist.variable} suppressHydrationWarning>
       <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
-        <Header />
-        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {children}
-        </main>
-        <Footer />
-        <Toaster />
-        <SpeedInsights />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
+          <Footer />
+          <Toaster />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

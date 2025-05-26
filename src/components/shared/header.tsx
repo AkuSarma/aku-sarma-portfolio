@@ -10,6 +10,7 @@ import { akuSarmaData } from '@/lib/resume-data';
 import type { NavItem } from '@/lib/resume-data';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -61,7 +62,7 @@ export default function Header() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-transparent"
+      isScrolled ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-background/30 backdrop-blur-sm" // Ensure some background even when not scrolled for theme toggle visibility
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" passHref legacyBehavior>
@@ -75,16 +76,18 @@ export default function Header() {
           {akuSarmaData.navItems.map((item) => (
             <NavLink key={item.href} item={item} />
           ))}
-          {akuSarmaData.socialLinks.slice(0,2).map((link) => ( // Show only GitHub and LinkedIn in desktop header
+          {akuSarmaData.socialLinks.slice(0,2).map((link) => ( 
             <Button key={link.label} variant="ghost" size="icon" asChild className="text-foreground hover:text-primary hover:bg-primary/5 transition-colors duration-200">
               <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
                 <link.icon className="h-5 w-5" />
               </a>
             </Button>
           ))}
+          <ThemeToggle />
         </nav>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-foreground hover:text-primary transition-colors duration-200">
