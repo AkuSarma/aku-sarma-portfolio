@@ -21,7 +21,7 @@ export default function AboutSnippetSection() {
           </p>
           <Button asChild variant="link" className="text-accent hover:text-accent/90 p-0 text-lg">
             <Link href="/about">
-              Learn more about my journey &rarr;
+              Learn more about me and my experience &rarr;
             </Link>
           </Button>
         </CardContent>
@@ -29,3 +29,4 @@ export default function AboutSnippetSection() {
     </section>
   );
 }
+
