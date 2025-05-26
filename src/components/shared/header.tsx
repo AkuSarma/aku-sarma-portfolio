@@ -9,7 +9,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import { akuSarmaData } from '@/lib/resume-data';
 import type { NavItem } from '@/lib/resume-data';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Header() {
@@ -68,7 +67,7 @@ export default function Header() {
         <Link href="/" passHref legacyBehavior>
           <a className="flex items-center text-2xl font-bold text-primary hover:text-accent transition-colors duration-200">
             <Code2Icon className="mr-2 h-8 w-8" />
-            Aku's Digital Nexus
+            Aku Sarma
           </a>
         </Link>
 
