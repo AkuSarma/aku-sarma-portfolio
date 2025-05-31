@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geist.variable} suppressHydrationWarning>
-      <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
+      <body className="antialiased flex flex-col min-h-screen bg-background text-foreground" suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
