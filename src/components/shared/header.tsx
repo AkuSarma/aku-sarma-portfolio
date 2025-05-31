@@ -28,17 +28,11 @@ export default function Header() {
   const NavLink = ({ item, mobile = false }: { item: NavItem, mobile?: boolean }) => (
     <Link
       href={item.href}
-      passHref // Recommended with asChild, or if legacyBehavior=true
+      passHref
       legacyBehavior={mobile}
     >
       {mobile ? (
           <SheetClose asChild>
-            {/* 
-              Note: For mobile (legacyBehavior=true), Link expects an <a> child.
-              Button by default renders <button>. To correctly make this an <a>,
-              it should ideally be <Button asChild><a>...</a></Button> or similar.
-              However, the current error is for desktop, so addressing that first.
-            */}
             <Button
             variant="ghost"
             className={cn(
@@ -53,17 +47,17 @@ export default function Header() {
       ) : (
         <Button
           variant="ghost"
-          asChild // Button styles apply to the <a> tag rendered by Link
+          asChild
           className={cn(
             "transition-colors duration-200",
             pathname === item.href ? "text-primary font-semibold bg-primary/10" : "text-foreground hover:text-primary hover:bg-primary/5"
           )}
         >
-          {/* The content of the link, no explicit <a> here. */}
-          <>
+          {/* Wrap icon and label in a span to be the single child for Button asChild */}
+          <span>
             <item.icon className="mr-2 h-4 w-4 md:hidden lg:inline-block" />
             {item.label}
-          </>
+          </span>
         </Button>
       )}
     </Link>
