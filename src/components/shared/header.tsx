@@ -28,11 +28,17 @@ export default function Header() {
   const NavLink = ({ item, mobile = false }: { item: NavItem, mobile?: boolean }) => (
     <Link
       href={item.href}
-      passHref
+      passHref // Recommended with asChild, or if legacyBehavior=true
       legacyBehavior={mobile}
     >
       {mobile ? (
           <SheetClose asChild>
+            {/* 
+              Note: For mobile (legacyBehavior=true), Link expects an <a> child.
+              Button by default renders <button>. To correctly make this an <a>,
+              it should ideally be <Button asChild><a>...</a></Button> or similar.
+              However, the current error is for desktop, so addressing that first.
+            */}
             <Button
             variant="ghost"
             className={cn(
@@ -47,13 +53,17 @@ export default function Header() {
       ) : (
         <Button
           variant="ghost"
-          asChild
+          asChild // Button styles apply to the <a> tag rendered by Link
           className={cn(
             "transition-colors duration-200",
             pathname === item.href ? "text-primary font-semibold bg-primary/10" : "text-foreground hover:text-primary hover:bg-primary/5"
           )}
         >
-          <a><item.icon className="mr-2 h-4 w-4 md:hidden lg:inline-block" />{item.label}</a>
+          {/* The content of the link, no explicit <a> here. */}
+          <>
+            <item.icon className="mr-2 h-4 w-4 md:hidden lg:inline-block" />
+            {item.label}
+          </>
         </Button>
       )}
     </Link>
@@ -62,7 +72,7 @@ export default function Header() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-background/30 backdrop-blur-sm" // Ensure some background even when not scrolled for theme toggle visibility
+      isScrolled ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-background/30 backdrop-blur-sm"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" passHref legacyBehavior>
@@ -76,7 +86,7 @@ export default function Header() {
           {akuSarmaData.navItems.map((item) => (
             <NavLink key={item.href} item={item} />
           ))}
-          {akuSarmaData.socialLinks.slice(0,2).map((link) => ( 
+          {akuSarmaData.socialLinks.slice(0,2).map((link) => (
             <Button key={link.label} variant="ghost" size="icon" asChild className="text-foreground hover:text-primary hover:bg-primary/5 transition-colors duration-200">
               <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
                 <link.icon className="h-5 w-5" />
