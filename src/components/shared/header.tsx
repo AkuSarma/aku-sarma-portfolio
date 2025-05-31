@@ -10,6 +10,7 @@ import { akuSarmaData } from '@/lib/resume-data';
 import type { NavItem } from '@/lib/resume-data';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { cn } from '@/lib/utils';
 
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
