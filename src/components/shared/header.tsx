@@ -72,7 +72,7 @@ export default function Header() {
         <Link href="/" passHref legacyBehavior>
           <a className="flex items-center text-2xl font-bold text-primary hover:text-accent transition-colors duration-200">
             <Code2Icon className="mr-2 h-8 w-8" />
-            Aku Sarma
+            {akuSarmaData.name}
           </a>
         </Link>
 
@@ -105,7 +105,7 @@ export default function Header() {
                    <Link href="/" passHref legacyBehavior>
                     <a className="flex items-center text-xl font-bold text-primary" onClick={() => setIsSheetOpen(false)}>
                       <Code2Icon className="mr-2 h-7 w-7" />
-                      Aku's Digital Nexus
+                      {akuSarmaData.name}
                     </a>
                   </Link>
                   <SheetClose asChild>

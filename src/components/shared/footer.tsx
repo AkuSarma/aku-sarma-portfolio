@@ -15,7 +15,7 @@ export default function Footer() {
             <Link href="/" passHref legacyBehavior>
               <a className="flex items-center text-xl font-bold text-primary hover:text-accent transition-colors duration-200 mb-2">
                 <Code2Icon className="mr-2 h-7 w-7" />
-                Aku's Digital Nexus
+                {akuSarmaData.name}
               </a>
             </Link>
             <p className="text-sm text-center md:text-left">
@@ -35,7 +35,7 @@ export default function Footer() {
           
           <div className="text-center md:text-right text-sm">
             <p>Crafted with <span role="img" aria-label="love">❤️</span> and Next.js</p>
-            <p>Designed for clarity and impact.</p>
+            <p>By {akusSarmaData.name} and AI.</p>
           </div>
         </div>
       </div>
