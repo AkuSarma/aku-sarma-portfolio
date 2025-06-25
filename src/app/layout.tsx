@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Geist } from 'next/font/google'; // Using Geist as specified in original
+import { Geist } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
@@ -14,9 +14,14 @@ const geist = Geist({
 });
 
 
+
 export const metadata: Metadata = {
   title: "Aku's Digital Nexus | Full Stack Developer & Data Scientist",
-  description: "Portfolio of Aku Sarma, showcasing projects, skills, and experience in full stack development and data science.",
+  description:
+    "Portfolio of Aku Sarma, showcasing projects, skills, and experience in full stack development and data science.",
+  icons: {
+    icon: "favicon.ico",
+  },
 };
 
 export default function RootLayout({
