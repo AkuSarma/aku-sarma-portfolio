@@ -49,6 +49,7 @@ export interface Project {
   description: string[];
   technologies: string[];
   codeLink: string;
+  liveLink?: string | null;
   image?: string;
   aiHint?: string;
 }
@@ -187,6 +188,26 @@ export const akuSarmaData = {
   ] as Experience[],
   projects: [
     {
+      title: "MoodMunch",
+      description: [
+        "AI powered recipe generator based on mood and dietary preference",
+        "Developed a nextjs web application with firebase authentication and datastore for secure user management and data storage.",
+        "Utilized Gemini AI for personalized recipe generation based on user mood and dietary preferences, with ingredient detection from images using object detection",
+      ],
+      technologies: [
+        "nextjs",
+        "firebase",
+        "firestore",
+        "firebase-auth",
+        "tailwindcss",
+        "gemini",
+        "object detection",
+      ],
+      codeLink: "https://github.com/AkuSarma/recipe-saga",
+      liveLink: "https://mood-munch-orpin.vercel.app/",
+      aiHint: "recipe generator",
+    },
+    {
       title: "Rent-a-car",
       description: [
         "Car rental application in MERN Stack.",
@@ -195,7 +216,7 @@ export const akuSarmaData = {
       ],
       technologies: ["React", "Tailwind CSS", "Express.js", "MongoDB Atlas"],
       codeLink: "https://github.com/AkuSarma/Rent-a-car",
-      image: "https://placehold.co/600x400.png",
+      liveLink: null,
       aiHint: "car rental",
     },
     {
@@ -213,7 +234,7 @@ export const akuSarmaData = {
         "SQLite3",
       ],
       codeLink: "https://github.com/AkuSarma/JILancer",
-      image: "https://placehold.co/600x400.png",
+      liveLink: null,
       aiHint: "freelance platform",
     },
     {
@@ -225,7 +246,7 @@ export const akuSarmaData = {
       ],
       technologies: ["React", "JavaScript", "CSS"],
       codeLink: "https://github.com/AkuSarma/Task-Manager",
-      image: "https://placehold.co/600x400.png",
+      liveLink: null,
       aiHint: "task manager",
     },
     {
@@ -243,8 +264,8 @@ export const akuSarmaData = {
         "MySQL",
         "Django",
       ],
-      codeLink: "https://github.com/AkuSarma/FindYourBook",
-      image: "https://placehold.co/600x400.png",
+      codeLink: "https://github.com/AkuSarma/Find_Your_Book",
+      liveLink: null,
       aiHint: "book donation",
     },
   ] as Project[],
