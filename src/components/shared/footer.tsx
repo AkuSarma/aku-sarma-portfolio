@@ -35,7 +35,7 @@ export default function Footer() {
           
           <div className="text-center md:text-right text-sm">
             <p>Crafted with <span role="img" aria-label="love">❤️</span> and Next.js</p>
-            <p>By {akusSarmaData.name} and AI.</p>
+            <p>By {akuSarmaData.name} and AI.</p>
           </div>
         </div>
       </div>

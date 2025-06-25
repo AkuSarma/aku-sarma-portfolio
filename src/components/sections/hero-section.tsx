@@ -35,7 +35,7 @@ export default function HeroSection() {
         </div>
         <div className="animate-fadeIn md:block hidden [animation-delay:0.2s]">
           <Image 
-            src="https://placehold.co/600x600.png" 
+            src="/AkuSarma.png" 
             alt="Aku Sarma - Developer Portrait" 
             width={600} 
             height={600}

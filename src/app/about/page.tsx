@@ -15,7 +15,7 @@ export default function AboutPage() {
     <div className="space-y-12 py-8">
       <header className="text-center space-y-6 animate-fadeIn">
          <Image 
-            src="https://placehold.co/150x150.png" 
+            src="/AkuSarma.png" 
             alt={akuSarmaData.name}
             width={150} 
             height={150}
@@ -33,30 +33,7 @@ export default function AboutPage() {
 
       <Separator />
 
-      {/* Education Section */}
-      <section className="animate-fadeIn [animation-delay:0.2s]">
-        <h2 className="text-3xl font-semibold text-foreground mb-6 flex items-center">
-          <GraduationCap className="mr-3 h-8 w-8 text-accent" /> Education
-        </h2>
-        <div className="space-y-6">
-          {akuSarmaData.education.map((edu, index) => (
-            <Card key={index} className="overflow-hidden">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">{edu.institution}</CardTitle>
-                <CardDescription className="text-md">{edu.degree}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{edu.duration}</p>
-                <p className="text-sm font-medium text-foreground mt-1">{edu.cgpa}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* Work Experience Section */}
+      {/* Work Experience Section */ }
       <section className="animate-fadeIn [animation-delay:0.4s]">
         <h2 className="text-3xl font-semibold text-foreground mb-6 flex items-center">
           <Briefcase className="mr-3 h-8 w-8 text-accent" /> Work Experience
@@ -79,6 +56,29 @@ export default function AboutPage() {
                     <LinkIcon className="mr-1 h-4 w-4" /> View Certificate
                   </a>
                 )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Education Section */}
+      <section className="animate-fadeIn [animation-delay:0.2s]">
+        <h2 className="text-3xl font-semibold text-foreground mb-6 flex items-center">
+          <GraduationCap className="mr-3 h-8 w-8 text-accent" /> Education
+        </h2>
+        <div className="space-y-6">
+          {akuSarmaData.education.map((edu, index) => (
+            <Card key={index} className="overflow-hidden">
+              <CardHeader>
+                <CardTitle className="text-xl text-primary">{edu.institution}</CardTitle>
+                <CardDescription className="text-md">{edu.degree}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{edu.duration}</p>
+                <p className="text-sm font-medium text-foreground mt-1">{edu.cgpa}</p>
               </CardContent>
             </Card>
           ))}
